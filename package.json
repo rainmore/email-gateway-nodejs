@@ -4,16 +4,24 @@
   "description": "A example to use email gate way ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon ./src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jie Rong <rainmore24@gmail.com> (Felix)",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rainmore/email-backend-nodejs.git"
+  },
   "devDependencies": {
     "nodemon": "^1.14.11"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "email-addresses": "^3.0.1",
+    "express": "^4.16.2",
+    "express-validation": "^1.0.2",
+    "joi": "^13.1.0",
+    "mimelib": "^0.3.1"
   }
 }
