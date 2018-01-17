@@ -1,0 +1,19 @@
+{
+  "name": "email-backend",
+  "version": "1.0.0",
+  "description": "A example to use email gate way ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jie Rong <rainmore24@gmail.com> (Felix)",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
