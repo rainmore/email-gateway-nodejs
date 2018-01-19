@@ -46,3 +46,6 @@ src/*/resources/application-*.properties
 
 # Node modules and front-end generated resources
 node_modules/
+
+.env
+/dist
