@@ -1,0 +1,7 @@
+.git
+.gitignore
+.editorconfig
+.env.default
+README.md
+node_modules
+src

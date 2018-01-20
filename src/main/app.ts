@@ -8,7 +8,7 @@ import * as expressValidator from "express-validator";
 // import * as bluebird from "bluebird";
 
 // Load environment variables from .env file, where API keys and passwords are configured
-dotenv.config({ path: ".env" });
+dotenv.config({ path: ".env.default" });
 
 // Controllers (route handlers)
 import * as v1ApiController from "./controllers/v1/api";
@@ -21,7 +21,9 @@ import * as v1ApiController from "./controllers/v1/api";
 const app = express();
 
 // Express configuration
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.NODEJS_PORT || 8080);
+app.set("host", process.env.NODEJS_HOST || "127.0.0.1");
+
 app.use(compression());
 app.use(bodyParser.json({type: "application/json"}));
 app.use(bodyParser.urlencoded({ extended: true }));
