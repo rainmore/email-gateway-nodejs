@@ -20,7 +20,7 @@ export let formatMail = (mail: IMail): string => {
 
 export let parseOneMail = (str: string): IMail | undefined => {
   const address = addrs.parseOneAddress(str) as addrs.ParsedMailbox;
-  if (isMailBox(address)) {
+  if (address && isMailBox(address)) {
     const mail = {email: address.address} as IMail;
     if (address.name) {
       mail.name = address.name;
