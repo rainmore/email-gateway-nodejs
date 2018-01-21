@@ -2,10 +2,8 @@ import * as express from "express";
 import * as compression from "compression";  // compresses requests
 import * as bodyParser from "body-parser";
 import * as dotenv from "dotenv";
-// import * as path from "path";
-// import * as passport from "passport";
 import * as expressValidator from "express-validator";
-// import * as bluebird from "bluebird";
+import * as mail from "./services/mails/dto/mail";
 
 // Load environment variables from .env file, where API keys and passwords are configured
 dotenv.config({ path: ".env.default" });
@@ -27,7 +25,19 @@ app.set("host", process.env.NODEJS_HOST || "127.0.0.1");
 app.use(compression());
 app.use(bodyParser.json({type: "application/json"}));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(expressValidator());
+app.use(expressValidator({
+  customValidators: {
+    validEmail: (value: string) => {
+      if (value) {
+        const address = mail.parseOneMail(value);
+        return (address && address.email) ? true : false;
+      }
+      else {
+        return false;
+      }
+    }
+  }
+}));
 
 /**
  * API examples routes.
