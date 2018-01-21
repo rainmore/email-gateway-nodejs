@@ -1,6 +1,6 @@
 {
   "name": "email-backend-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A example to use email gate way ",
   "main": "index.js",
   "scripts": {
